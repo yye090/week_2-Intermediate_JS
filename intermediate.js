@@ -5,7 +5,7 @@ Write a function ucFirst(str) that returns the string str with the capitalized f
 
 
 function ucFirst(str){
-    return str[0].toUpperCase() + str.slice(1,);
+    return str[0].toUpperCase() + str.slice(1); //while it works with an extra comma, probably better to leave it out
 }
 console.log(ucFirst("jack"));
 */
@@ -28,9 +28,9 @@ truncate("Hi everyone!", 20) = "Hi everyone!"
 
 
 function truncate(str,maxlength){
-    return console.log(str.length > maxlength? str.slice(0,19) +"...": str);
+    return console.log(str.length > maxlength? str.slice(0,19) +"...": str); //the 19 on this line is actually hardcoding the maxlength
 }
-truncate("What I'd like to tell on this topic is:", 20);
+truncate("What I'd like to tell on this topic is:", 25); //so changing the number here has no difference on where the string is truncated
 truncate("Hi everyone!", 20)
 */
 
@@ -71,7 +71,7 @@ camelize("list-style-image") == 'listStyleImage';
 camelize("-webkit-transition") == 'WebkitTransition';
 
 
-function camelize(str){
+function camelize(str){ //this function doesn't make the character after the dash uppercase (eg. backgroundColor). how could you change it to do this?
     let newstr = ""
     for (char of str){
         char === "-"? newstr+= "": newstr+=char;
@@ -193,7 +193,7 @@ let map = new Map();
 map.set("name", "John");
 let keys = Array.from(map.keys());
 keys.push("more");
-alert(keys); // name, more*/
+console.log(keys); // name, more*/
 
 
 
@@ -249,7 +249,7 @@ const salaries = {
     "Pete": 300,
     "Mary": 300
 };
-console.log(topSalary(salaries));*/
+console.log(topSalary(salaries)); // */
 
 /* 
 getsecondsToday
@@ -262,9 +262,9 @@ function getSecondsToday(){
     let currentHour = date.getHours() * 3600;
     return console.log(currentSec+currentMin+currentHour);
 }
-getSecondsToday()*/
+getSecondsToday() // */
 
-/*circular references
+/*circular references 
 let room = {
     number: 23
   };
@@ -280,7 +280,7 @@ let room = {
   console.log(JSON.stringify(meetup, function replacer(key, value) {
     console.log(key,value)
     return (key != "" && value == meetup) ? undefined : value;
-  }));*/
+  })); //*/
   
 
 
